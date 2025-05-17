@@ -80,22 +80,6 @@ section {
     background-color: #f4f4f4;
 }
 
-.hero {
-    background-color: #f0f8ff;
-}
-
-@media (min-width: 768px) {
-    .hero {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .hero-text {
-        max-width: 50%;
-    }
-    .hero-image {
-        max-width: 50%;
-    }
-}
 
 header {
     width: 100%;
@@ -137,7 +121,7 @@ h1, h2 {
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
@@ -179,7 +163,6 @@ ul {
 /* Hero image setup */
 .hero-image {
     width: 100%;
-    max-width: 400px;
     aspect-ratio: 1 / 1;
     overflow: hidden;
 }
@@ -189,6 +172,22 @@ ul {
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .hero-text {
+        max-width: 50%;
+    }
+    .hero-image {
+        max-width: 50%;
+    }
+    .h1 {
+        font-size: 4rem;
+    }
 }
 
 /* Dropdown content handling */
