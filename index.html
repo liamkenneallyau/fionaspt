@@ -15,7 +15,7 @@
                 </ul>
             </nav>
         </header>
-        <section>
+        <section class="hero">
             <div class="hero-text">
                 <h1>Fiona Kenneally Personal Training</h1>
                 <h2 class="hero-subheading">Supporting Women's Health and Fitness in the Dubai Marina</h2>
@@ -78,6 +78,23 @@ section {
     align-items: center;
     justify-content: center;
     background-color: #f4f4f4;
+}
+
+.hero {
+    background-color: #f0f8ff;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .hero-text {
+        max-width: 50%;
+    }
+    .hero-image {
+        max-width: 50%;
+    }
 }
 
 header {
