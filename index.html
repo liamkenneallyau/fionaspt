@@ -16,21 +16,27 @@
                 <img src="Client-training-female.jpg" alt="Fiona Kenneally Personal Training">
             </div>
         </section>
-        <section id="about">
-            <div class="about-text">
-                <button class="dropdown-button">Passionate About Women's Health</button>
-                <div class="dropdown-content">
-                    <p>Since 2022, I have transitioned away from my background in elite sport to help everyday women hit their goals.</p>
-                    <p>Whether they are to look better, get stronger, or just be happier in their own skin.</p>
+        <section class="about" id="about">
+            <h2 class="about-heading">Hi! I'm Fiona.</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="dolly-parton_glamour_1apr16_rex_b.jpg.webp" alt="Fiona Kenneally">
                 </div>
-                <button class="dropdown-button">From Olympians to the Everyday</button> 
-                <div class="dropdown-content">
-                    <p>With over <strong>20 years of experience</strong> coaching female gymnasts at the highest level, I have worked with <strong>5 Australian Olympians</strong>.</p>
-                    <p>I spent 10 years as the <strong>Head Coach of the Victorian Institute of Sport Gymnastics Program</strong> and have done consulting work for elite gymnastics federations in Singapore and Australia.</p>
-                </div>
-                <button class="dropdown-button">My Coaching Philosophy</button>
-                <div class="dropdown-content">
-                    <p>Exercise is, and should always be, for everyone. My goal is always to create a supportive, kind environment, and provide practical advice that helps you tackle the challenges of mid-life with physical strength and mental joy.</p>
+                <div class="about-text">
+                    <button class="dropdown-button">Passionate About Women's Health</button>
+                    <div class="dropdown-content">
+                        <p>Since 2022, I have transitioned away from my background in elite sport to help everyday women hit their goals.</p>
+                        <p>Whether they are to look better, get stronger, or just be happier in their own skin.</p>
+                    </div>
+                    <button class="dropdown-button">From Olympians to the Everyday</button> 
+                    <div class="dropdown-content">
+                        <p>With over <strong>20 years of experience</strong> coaching female gymnasts at the highest level, I have worked with <strong>5 Australian Olympians</strong>.</p>
+                        <p>I spent 10 years as the <strong>Head Coach of the Victorian Institute of Sport Gymnastics Program</strong> and have done consulting work for elite gymnastics federations in Singapore and Australia.</p>
+                    </div>
+                    <button class="dropdown-button">My Coaching Philosophy</button>
+                    <div class="dropdown-content">
+                        <p>Exercise is, and should always be, for everyone. My goal is always to create a supportive, kind environment, and provide practical advice that helps you tackle the challenges of mid-life with physical strength and mental joy.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -71,7 +77,6 @@ section {
     justify-content: center;
     background-color: #fff;
 }
-
     
 h1, h2 {
     font-weight: 600;
@@ -183,6 +188,41 @@ ul {
     }
 }
 
+
+.about {
+    background-color: #999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+} 
+
+.about-heading {
+    width: 100%;
+    padding: 30px;
+    font-size: 2rem;
+    font-family:'Times New Roman', Times, serif;
+    color: #FFA726;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.about-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 /* Dropdown content handling */
 .dropdown-section {
     padding: 40px 20px;
@@ -228,8 +268,32 @@ ul {
     justify-content: space-around;
     gap: 20px;
     padding: 40px 20px;
-    max-width: 800px;
+    max-width: 300px;
     margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .about-text {
+        width: 70%;
+    }
+
+    .about-heading {
+        font-size: 2.5rem;
+    }
+
+    .about-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+    }
+
+    .about-image {
+        max-width: 50%;
+
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
 }
 
 /* Qualifications */
