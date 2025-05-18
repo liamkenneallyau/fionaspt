@@ -264,25 +264,36 @@ ul {
     border: 1px solid #000000;
 }
 
-.dropdown-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease, border 0.3s ease, padding 0.5s ease-out, color 0.3s ease-in 0.3s;
-  color: #c5E1A5;
-  border: none;
-  border-radius: 20px;
-  padding: 0;
-  background-color: #C5E1A5;
-}
+  .dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: none;
+    color: #c5E1A5;
+    border: none;
+    border-radius: 20px;
+    padding: 0;
+    background-color: #C5E1A5;
+  }
 
-/* Active dropdown (shown via JS toggle) */
-.dropdown-content.active {
-  max-height: 1000px; 
-  transition: color 0.3s ease-out, padding 0.3s ease-in 0.2s;
-  border: 1px solid #e0e0e0;
-  color: #000;
-  padding: 20px;
-}
+  .dropdown-content.expanding {
+    padding: 20px;
+    color: #000;
+    transition:
+      padding 0s ease,
+      color 0.3s ease-in 0.3s;
+    border: 1px solid #e0e0e0;
+    max-height: 1000px;
+  }
+
+  .dropdown-content.collapsing {
+    padding: 0;
+    color: #c5E1A5;
+    transition:
+      padding 0.5s ease 0.3s,
+      color 0s ease;
+    max-height: 0;
+    border: none;
+  }
 
 /* About text area */
 .about-text {
@@ -345,9 +356,18 @@ a:hover {
   const buttons = document.querySelectorAll('.dropdown-button');
 
   buttons.forEach(button => {
+    const content = button.nextElementSibling;
+
     button.addEventListener('click', () => {
-      const content = button.nextElementSibling;
-      content.classList.toggle('active');
+      if (content.classList.contains('expanding')) {
+        // Collapse
+        content.classList.remove('expanding');
+        content.classList.add('collapsing');
+      } else {
+        // Expand
+        content.classList.remove('collapsing');
+        content.classList.add('expanding');
+      }
     });
   });
 </script>
