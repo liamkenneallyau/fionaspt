@@ -108,12 +108,14 @@ ul {
     align-items: center;
     padding: 60px 20px;
     text-align: center;
+    background: linear-gradient(to right, #c5E1A5, #4DB6ac);
 }
 
 .hero-text {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    color: #ffa726;
     max-width: 300px;
     padding: 20px;
     justify-content: space-around;
@@ -135,6 +137,27 @@ ul {
     object-fit: cover;
     display: block;
 }
+
+.hero-button {
+    display: inline-block;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+    background-color: #555;
+    color: #fff;
+    padding: 15px 30px;
+    border: 1px solid #ffa726;
+    border-radius: 50px;
+}
+
+.hero-button:hover {
+    background-color: #FFA726;
+    color: #000;
+    border: 1px solid #555;
+    text-decoration: none;
+}
+
 
 @media (min-width: 768px) {
     .hero {
@@ -176,26 +199,6 @@ ul {
     border-radius: 10px;
     cursor: pointer;
     margin-bottom: 10px;
-}
-
-.hero-button {
-    display: inline-block;
-    font-size: 1.5rem;
-    text-align: center;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    transition: background-color 0.3s ease;
-    transition: color 0.3s ease;
-    background-color: #4db7ac;
-    color: #fff;
-    padding: 15px 30px;
-    border: 1px solid #ffa726;
-    border-radius: 50px;
-}
-
-.hero-button:hover {
-    background-color: #FFA726;
-    color: #000;
-    text-decoration: none;
 }
 
 .dropdown-content {
