@@ -261,7 +261,7 @@ ul {
 .dropdown-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease, border 0.3s ease, padding 0.5s ease-out, color 0.3s ease 0.2s;
+  transition: max-height 0.5s ease, border 0.3s ease, padding 0.5s ease-out, color 0.3s ease-in 0.3s;
   color: #c5E1A5;
   border: none;
   border-radius: 20px;
@@ -272,6 +272,7 @@ ul {
 /* Active dropdown (shown via JS toggle) */
 .dropdown-content.active {
   max-height: 1000px; 
+  transition: color 0.3s ease-out, padding 0.3s ease-in 0.2s;
   border: 1px solid #e0e0e0;
   color: #000;
   padding: 20px;
