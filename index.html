@@ -178,16 +178,6 @@ ul {
     margin-bottom: 10px;
 }
 
-.dropdown-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
-  border: 1px solid transparent;
-  border-radius: 20px;
-  padding: 20px;
-  background-color: #C5E1A5;
-}
-
 .hero-button {
     display: inline-block;
     font-size: 1.5rem;
@@ -208,10 +198,21 @@ ul {
     text-decoration: none;
 }
 
+.dropdown-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, border-color 0.5s ease, padding 0.5s ease;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  padding: 0;
+  background-color: #C5E1A5;
+}
+
 /* Active dropdown (shown via JS toggle) */
 .dropdown-content.active {
   max-height: 1000px; /* Big enough to fit your content */
   border: 1px solid #e0e0e0;
+  padding: 20px;
 }
 
 /* About text area */
