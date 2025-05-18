@@ -378,7 +378,10 @@ buttons.forEach(button => {
     if (isOpen) {
       button.classList.remove('active');
       content.classList.add('collapsing');
-      content.classList.remove('open');
+      // Wait one animation frame before removing .open
+        requestAnimationFrame(() => {
+  content.classList.remove('open');
+        });
       content.addEventListener('transitionend', function onEnd() {
         content.classList.remove('collapsing');
         content.removeEventListener('transitionend', onEnd);
