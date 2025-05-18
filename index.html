@@ -264,30 +264,30 @@ ul {
   .dropdown-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease;
     color: #c5E1A5;
     border: none;
     border-radius: 20px;
     padding: 0;
     background-color: #C5E1A5;
-  }
-
-  .dropdown-content.visible {
-    padding: 20px;
-    border: 1px solid #e0e0e0;
+    opacity: 0;
   }
 
   .dropdown-content.open {
-    color: #000;
     max-height: none;
-    transition: padding 0.5s ease, color 0.7s ease-out, max-height 0.5s ease;
+    color: #000;
+    border: 1px solid #FFA726;
+    padding: 20px;
+    opacity: 1;
   }
 
   .dropdown-content.collapsing {
-    color: #c5E1A5;
-    max-height: 0;
-    transition: padding 0.5s ease-in, color 0.3s ease-out, max-height 0.5s ease, border 0.5s ease;
+    transition: padding 0.5s ease-in, color 0.5s ease-out, max-height 0.5s ease, border 0.5s ease;
   }
+
+  .dropdown-content.expanding {
+    transition: max-height 0.5s ease, opacity 0.3s ease, padding 0.5s ease-out, color 0.5s ease-in;
+  }
+
 /* About text area */
 .about-text {
     display: flex;
@@ -364,35 +364,34 @@ a:hover {
 }
 </style>
 <script defer>
-  const buttons = document.querySelectorAll('.dropdown-button');
+const buttons = document.querySelectorAll('.dropdown-button');
 
-  buttons.forEach(button => {
-    const content = button.nextElementSibling;
+buttons.forEach(button => {
+  const content = button.nextElementSibling;
 
-    button.addEventListener('click', () => {
-      // Prevent double click during animation
-      if (content.classList.contains('collapsing') || content.classList.contains('expanding')) return;
+  button.addEventListener('click', () => {
+    if (!content || content.classList.contains('collapsing') || content.classList.contains('expanding')) return;
 
-      const isOpen = content.classList.contains('open');
+    const isOpen = content.classList.contains('open');
 
-      if (isOpen) {
-        content.classList.remove('open', 'visible');
-        content.classList.add('collapsing');
-        button.classList.remove('active');
-
-        setTimeout(() => {
-          content.classList.remove('collapsing');
-        }, 500);
-      } else {
-        content.classList.add('expanding', 'open', 'visible');
-        button.classList.add('active');
-
-        setTimeout(() => {
-          content.classList.remove('expanding');
-        }, 500);
-      }
-    });
+    if (isOpen) {
+      button.classList.remove('active');
+      content.classList.add('collapsing');
+      content.classList.remove('open');
+      content.addEventListener('transitionend', function onEnd() {
+        content.classList.remove('collapsing');
+        content.removeEventListener('transitionend', onEnd);
+      });
+    } else {
+      button.classList.add('active');
+      content.classList.add('expanding', 'open');
+      content.addEventListener('transitionend', function onEnd() {
+        content.classList.remove('expanding');
+        content.removeEventListener('transitionend', onEnd);
+      });
+    }
   });
+});
 </script>
     </body>
 </html>
