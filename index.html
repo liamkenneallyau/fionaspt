@@ -181,8 +181,8 @@ ul {
         max-width: 50%;
         border-top-left-radius: 100%;
         border-bottom-left-radius: 100%;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
     h1 .hero-heading {
@@ -244,6 +244,7 @@ ul {
     color: #000;
     background-color: #FFA726;
     border: 1px solid #4DB6AC;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
     text-align: left;
     border-radius: 10px;
     cursor: pointer;
@@ -253,6 +254,7 @@ ul {
 .dropdown-button:hover {
     background-color: #4DB6AC;
     color: #fff;
+    cursor: pointer;
     border: 1px solid #FFA726;
 }
 
